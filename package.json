@@ -1,0 +1,15 @@
+{
+  "name": "api-aluraflix",
+  "version": "1.0.0",
+  "description": "Este repositório abriga o backend da plataforma _Aluraflix_, projetada para organizar listas de vídeos. Os usuários podem criar e gerenciar suas listas de vídeos favoritas, categorizando os vídeos conforme desejado. A API segue o padrão REST, conta com autenticação segura e inclui testes automatizados para garantir a estabilidade e confiabilidade do sistema.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "author": "Muniz Neto",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "type": "module"
+}
