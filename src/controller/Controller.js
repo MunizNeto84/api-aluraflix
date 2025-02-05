@@ -27,6 +27,28 @@ class Controller {
       });
     }
   }
+
+  async edit(req, res) {
+    const { id } = req.params;
+    const updatedData = req.body;
+
+    try {
+      const [updated] = await this.entityService.edit(updatedData, { id });
+      if (updated) {
+        return res.status(200).json({
+          message: "Registro atualizado com sucesso!",
+        });
+      } else {
+        return res.status(404).json({
+          erro: "Registro não encontrado.",
+        });
+      }
+    } catch (error) {
+      return res.status(500).json({
+        erro: error.message,
+      });
+    }
+  }
 }
 
 export default Controller;

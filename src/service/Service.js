@@ -15,6 +15,10 @@ class Service {
   async create(data) {
     return dataSource[this.model].create(data);
   }
+
+  async edit(updatedData, where) {
+    return dataSource[this.model].update(updatedData, { where });
+  }
 }
 
 export default Service;
