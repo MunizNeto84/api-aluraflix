@@ -1,15 +1,22 @@
 {
   "name": "api-aluraflix",
   "version": "1.0.0",
-  "description": "Este repositório abriga o backend da plataforma _Aluraflix_, projetada para organizar listas de vídeos. Os usuários podem criar e gerenciar suas listas de vídeos favoritas, categorizando os vídeos conforme desejado. A API segue o padrão REST, conta com autenticação segura e inclui testes automatizados para garantir a estabilidade e confiabilidade do sistema.",
-  "main": "index.js",
+  "description": "Este repositório hospeda o backend da plataforma Aluraflix",
+  "main": "server.js",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "start": "node server.js",
+    "migrate:up": "sequelize-cli db:migrate"
   },
   "author": "Muniz Neto",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "dotenv-expand": "^12.0.1",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
   },
   "type": "module"
 }

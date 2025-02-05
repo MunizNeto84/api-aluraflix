@@ -2,7 +2,7 @@
 
 # api-aluraflix
 
-Este repositório abriga o backend da plataforma _Aluraflix_, projetada para organizar listas de vídeos. Os usuários podem criar e gerenciar suas listas de vídeos favoritas, categorizando os vídeos conforme desejado.
+Este repositório hospeda o backend da plataforma _Aluraflix_, projetada para organizar listas de vídeos. Os usuários podem criar e gerenciar suas listas de vídeos favoritas, categorizando os vídeos conforme desejado.
 A API segue o padrão REST, conta com autenticação segura e inclui testes automatizados para garantir a estabilidade e confiabilidade do sistema.
 
 ## 💻 Scripts
@@ -14,6 +14,11 @@ A API segue o padrão REST, conta com autenticação segura e inclui testes auto
 ## 🧩 Dependências
 
 express
+dotenv
+dotenv-expand
+pg
+sequelize
+sequelize-cli
 
 ## 🗄️ Banco de Dados
 
