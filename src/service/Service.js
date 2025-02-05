@@ -7,10 +7,13 @@ class Service {
   }
 
   async getAll(where = {}) {
-    console.log("Modelos disponíveis:", Object.keys(dataSource));
     return dataSource[this.model].findAll({
       where,
     });
+  }
+
+  async getById(id) {
+    return dataSource[this.model].findByPk(id);
   }
 
   async create(data) {

@@ -5,6 +5,9 @@ const videoController = new VideoController();
 const routers = Router();
 
 routers.get("/api/v1/video", (req, res) => videoController.getAll(req, res));
+routers.get("/api/v1/video/:id", (req, res) =>
+  videoController.getById(req, res)
+);
 routers.post("/api/v1/video", (req, res) => videoController.create(req, res));
 routers.patch("/api/v1/video/:id", (req, res) =>
   videoController.edit(req, res)

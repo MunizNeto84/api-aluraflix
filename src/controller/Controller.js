@@ -15,6 +15,24 @@ class Controller {
     }
   }
 
+  async getById(req, res) {
+    const { id } = req.params;
+    try {
+      const getById = await this.entityService.getById(Number(id));
+      if (getById) {
+        return res.status(200).json(getById);
+      } else {
+        return res.status(404).json({
+          erro: "Registro não encontrado",
+        });
+      }
+    } catch (error) {
+      return res.status(500).json({
+        erro: error.message,
+      });
+    }
+  }
+
   async create(req, res) {
     const dados = req.body;
 
