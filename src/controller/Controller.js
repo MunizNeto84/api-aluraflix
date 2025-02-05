@@ -49,6 +49,27 @@ class Controller {
       });
     }
   }
+
+  async delete(req, res) {
+    const { id } = req.params;
+
+    try {
+      const deleted = await this.entityService.delete(Number(id));
+      if (deleted) {
+        return res.status(200).json({
+          message: "Registro delado com sucesso!",
+        });
+      } else {
+        return res.status(404).json({
+          erro: "Registro não encontrado",
+        });
+      }
+    } catch (error) {
+      return res.status(500).json({
+        erro: error.message,
+      });
+    }
+  }
 }
 
 export default Controller;

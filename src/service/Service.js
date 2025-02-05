@@ -1,3 +1,4 @@
+import { where } from "sequelize";
 import * as dataSource from "../infra/database/models/index.js";
 
 class Service {
@@ -18,6 +19,10 @@ class Service {
 
   async edit(updatedData, where) {
     return dataSource[this.model].update(updatedData, { where });
+  }
+
+  async delete(id) {
+    return dataSource[this.model].destroy({ where: { id: id } });
   }
 }
 

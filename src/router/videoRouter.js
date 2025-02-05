@@ -9,5 +9,8 @@ routers.post("/api/v1/video", (req, res) => videoController.create(req, res));
 routers.patch("/api/v1/video/:id", (req, res) =>
   videoController.edit(req, res)
 );
+routers.delete("/api/v1/video/:id", (req, res) =>
+  videoController.delete(req, res)
+);
 
 export default routers;
