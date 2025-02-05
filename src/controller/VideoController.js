@@ -7,6 +7,7 @@ const videoService = new VideoService();
 class VideoController extends Controller {
   constructor() {
     super(videoService);
+    this.entityName = "Video";
   }
 }
 

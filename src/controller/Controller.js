@@ -1,91 +1,91 @@
+import AppError from "../err/AppError.js";
+
 class Controller {
-  constructor(entityService) {
+  constructor(entityService, entityName) {
     this.entityService = entityService;
+    this.entityName = entityName;
   }
 
-  async getAll(req, res) {
+  async getAll(req, res, next) {
     try {
       const getAll = await this.entityService.getAll();
-      return res.status(200).json(getAll);
+
+      if (!getAll) {
+        return next(new AppError(`${this.entityName}s não encontrado(a).`));
+      }
+      return res.status(200).json({ conteudo: getAll });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({
-        error: error.message,
-      });
+      next(error);
     }
   }
 
-  async getById(req, res) {
+  async getById(req, res, next) {
     const { id } = req.params;
     try {
       const getById = await this.entityService.getById(Number(id));
-      if (getById) {
-        return res.status(200).json(getById);
-      } else {
-        return res.status(404).json({
-          erro: "Registro não encontrado",
-        });
+
+      if (!getById) {
+        return next(new AppError(`${this.entityName} não encontrado(a).`, 404));
       }
+
+      return res.status(200).json(getById);
     } catch (error) {
-      return res.status(500).json({
-        erro: error.message,
-      });
+      next(error);
     }
   }
 
-  async create(req, res) {
+  async create(req, res, next) {
     const dados = req.body;
 
     try {
       const newVideo = await this.entityService.create(dados);
-      return res.status(201).json(newVideo);
-    } catch (error) {
-      return res.status(500).json({
-        erro: error.message,
+
+      if (!newVideo) {
+        return next(new AppError("Dados inválidos ou incompletos.", 400));
+      }
+
+      return res.status(201).json({
+        message: `${this.entityName} criado(a) com sucesso.`,
+        conteudo: newVideo,
       });
+    } catch (error) {
+      next(error);
     }
   }
 
-  async edit(req, res) {
+  async edit(req, res, next) {
     const { id } = req.params;
     const updatedData = req.body;
 
     try {
       const [updated] = await this.entityService.edit(updatedData, { id });
-      if (updated) {
-        return res.status(200).json({
-          message: "Registro atualizado com sucesso!",
-        });
-      } else {
-        return res.status(404).json({
-          erro: "Registro não encontrado.",
-        });
+      if (!updated) {
+        return next(new AppError(`${this.entityName} não encontrado(a).`, 404));
       }
-    } catch (error) {
-      return res.status(500).json({
-        erro: error.message,
+
+      return res.status(200).json({
+        message: `${this.entityName} atualizado(a) com sucesso!`,
+        conteudo: updated,
       });
+    } catch (error) {
+      next(error);
     }
   }
 
-  async delete(req, res) {
+  async delete(req, res, next) {
     const { id } = req.params;
 
     try {
       const deleted = await this.entityService.delete(Number(id));
-      if (deleted) {
-        return res.status(200).json({
-          message: "Registro delado com sucesso!",
-        });
+      if (!deleted) {
+        return next(new AppError(`${this.entityName} não encontrado(a).`, 404));
       } else {
-        return res.status(404).json({
-          erro: "Registro não encontrado",
-        });
+        return res
+          .status(200)
+          .json({ message: `${this.entityName} deletado(a) com sucesso!` });
       }
     } catch (error) {
-      return res.status(500).json({
-        erro: error.message,
-      });
+      next(error);
     }
   }
 }
