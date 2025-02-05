@@ -11,6 +11,10 @@ class Service {
       where,
     });
   }
+
+  async create(data) {
+    return dataSource[this.model].create(data);
+  }
 }
 
 export default Service;

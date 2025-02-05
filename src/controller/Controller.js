@@ -14,6 +14,19 @@ class Controller {
       });
     }
   }
+
+  async create(req, res) {
+    const dados = req.body;
+
+    try {
+      const newVideo = await this.entityService.create(dados);
+      return res.status(201).json(newVideo);
+    } catch (error) {
+      return res.status(500).json({
+        erro: error.message,
+      });
+    }
+  }
 }
 
 export default Controller;
