@@ -10,6 +10,9 @@ routers.get("/api/v1/categoria", (req, res, next) =>
 routers.get("/api/v1/categoria/:id", (req, res, next) =>
   categoriaController.getById(req, res, next)
 );
+routers.get("/api/v1/categoria/:id/video", (req, res, next) =>
+  categoriaController.getAllVideosByID(req, res, next)
+);
 routers.post("/api/v1/categoria", (req, res, next) =>
   categoriaController.create(req, res, next)
 );
