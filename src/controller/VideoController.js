@@ -1,5 +1,4 @@
 import Controller from "./Controller.js";
-
 import VideoService from "../service/VideoService.js";
 
 const videoService = new VideoService();

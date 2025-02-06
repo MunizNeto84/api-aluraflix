@@ -1,4 +1,3 @@
-import { where } from "sequelize";
 import * as dataSource from "../infra/database/models/index.js";
 
 class Service {
