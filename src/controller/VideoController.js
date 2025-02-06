@@ -1,5 +1,7 @@
 import Controller from "./Controller.js";
 import VideoService from "../service/VideoService.js";
+import { Sequelize } from "sequelize";
+import AppError from "../err/AppError.js";
 
 const videoService = new VideoService();
 
@@ -7,6 +9,36 @@ class VideoController extends Controller {
   constructor() {
     super(videoService);
     this.entityName = "Video";
+  }
+
+  async searchVideo(req, res, next) {
+    try {
+      const { search } = req.query;
+      const whereSearch = search
+        ? {
+            [Sequelize.Op.or]: [
+              { titulo: { [Sequelize.Op.iLike]: `%${search}%` } },
+            ],
+          }
+        : {};
+
+      const videos = await videoService.searchVideo(whereSearch);
+
+      if (videos.length === 0) {
+        return next(
+          new AppError(
+            `Não encontramos nenhum titulo com o termo: ${search}.`,
+            404
+          )
+        );
+      }
+
+      return res.status(200).json({
+        videos,
+      });
+    } catch (error) {
+      next(error);
+    }
   }
 }
 

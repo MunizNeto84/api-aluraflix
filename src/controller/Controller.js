@@ -20,7 +20,10 @@ class Controller {
   }
 
   async getById(req, res, next) {
-    const { id } = req.params;
+    let { id } = req.params;
+    if (isNaN(id)) {
+      return next(new AppError(`O id precisa ser um numero.`, 400));
+    }
     try {
       const getById = await this.entityService.getById(Number(id));
 
@@ -54,7 +57,10 @@ class Controller {
   }
 
   async edit(req, res, next) {
-    const { id } = req.params;
+    let { id } = req.params;
+    if (isNaN(id)) {
+      return next(new AppError(`O id precisa ser um numero.`, 400));
+    }
     const updatedData = req.body;
 
     try {
@@ -73,7 +79,10 @@ class Controller {
   }
 
   async delete(req, res, next) {
-    const { id } = req.params;
+    let { id } = req.params;
+    if (isNaN(id)) {
+      return next(new AppError(`O id precisa ser um numero.`, 400));
+    }
 
     try {
       const deleted = await this.entityService.delete(Number(id));
