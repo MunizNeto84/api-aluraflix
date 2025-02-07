@@ -19,6 +19,8 @@ dotenv-expand
 pg
 sequelize
 sequelize-cli
+jest
+supertest
 
 ## 🗄️ Banco de Dados
 

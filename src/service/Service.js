@@ -1,7 +1,8 @@
 import * as dataSource from "../infra/database/models/index.js";
 
 class Service {
-  constructor(modelName) {
+  constructor(modelName, dataSource) {
+    this.dataSource = dataSource;
     this.model = modelName;
   }
 
