@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --watchAll",
     "migrate:up": "sequelize-cli db:migrate"
   },
   "author": "Muniz Neto",

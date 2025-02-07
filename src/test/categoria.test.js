@@ -26,6 +26,13 @@ app.delete("/categoria/:id", (req, res, next) =>
   categoriaController.delete(req, res, next)
 );
 
+const testeCategoria = {
+  titulo: "categoria-de-teste",
+  cor: "#000000",
+};
+
+let testeCriacao;
+
 describe("Testes do model Categoria: ", () => {
   it("GET - Deve retornar todas as categorias", async () => {
     const res = await request(app).get("/categoria");
@@ -42,5 +49,10 @@ describe("Testes do model Categoria: ", () => {
   it("GET - Deve retornar bad request ao buscar os videos por categoria.", async () => {
     const res = await request(app).get("/categoria/a/video");
     expect(res.status).toBe(400);
+  });
+
+  it("POST - Deve criar uma categoria de teste.", async () => {
+    testeCriacao = await request(app).post("/categoria").send(testeCategoria);
+    expect(testeCriacao.status).toBe(201);
   });
 });
