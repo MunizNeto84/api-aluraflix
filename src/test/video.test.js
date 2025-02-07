@@ -25,7 +25,7 @@ describe("Testes do model Video: ", () => {
   it("POST - Deve criar um video de teste.", async () => {
     const testeVideo = {
       titulo: "Video de teste",
-      descricao: "Estou criando um video para meus testes",
+      descricao: "Estou criando um video para meus testes.",
       url: "https://youtu.be/testeID",
       categoriaId: "1",
     };
@@ -33,7 +33,7 @@ describe("Testes do model Video: ", () => {
     idVideo = res.body.conteudo.id;
     expect(res.status).toBe(201);
   });
-  it("GET - Deve retornar todos os videos", async () => {
+  it("GET - Deve retornar todos os videos.", async () => {
     const res = await request(app).get("/video");
     expect(res.status).toBe(200);
   });
@@ -42,5 +42,16 @@ describe("Testes do model Video: ", () => {
     const res = await request(app).get(`/video/${idVideo}`);
     expect(res.status).toBe(200);
     expect(res.body.titulo).toBe("Video de teste");
+  });
+
+  it("PACTH - Deve editar o video de teste.", async () => {
+    const testeVideoEditado = {
+      titulo: "Video de teste editado",
+      descricao: "Estou editando o video para meus testes.",
+    };
+    const res = await request(app)
+      .patch(`/video/${idVideo}`)
+      .send(testeVideoEditado);
+    expect(res.status).toBe(200);
   });
 });
