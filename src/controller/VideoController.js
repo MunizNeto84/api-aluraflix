@@ -12,6 +12,8 @@ class VideoController extends Controller {
   }
 
   async searchVideo(req, res, next) {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 7;
     try {
       const { search } = req.query;
       const whereSearch = search
@@ -22,7 +24,7 @@ class VideoController extends Controller {
           }
         : {};
 
-      const videos = await videoService.searchVideo(whereSearch);
+      const videos = await videoService.searchVideo(whereSearch, page, limit);
 
       if (videos.length === 0) {
         return next(

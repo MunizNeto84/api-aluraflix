@@ -7,13 +7,15 @@ class Controller {
   }
 
   async getAll(req, res, next) {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 7;
     try {
-      const getAll = await this.entityService.getAll();
+      const getAll = await this.entityService.getAll({}, page, limit);
 
       if (!getAll) {
-        return next(new AppError(`${this.entityName}s não encontrado(a).`));
+        return next(new AppError(`${this.entityName}s não encontrados(as).`));
       }
-      return res.status(200).json({ conteudo: getAll });
+      return res.status(200).json({ getAll });
     } catch (error) {
       next(error);
     }

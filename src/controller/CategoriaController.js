@@ -11,14 +11,17 @@ class CategoriaController extends Controller {
   }
 
   async getAllVideosByID(req, res, next) {
-    let { id } = req.params;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 7;
 
+    let { id } = req.params;
     id = Number(id);
+
     if (isNaN(id)) {
       return next(new AppError(`O id precisa ser um numero.`, 400));
     }
     try {
-      const videos = await categoriaService.getAllVideosById(id);
+      const videos = await categoriaService.getAllVideosById(id, page, limit);
       if (videos.length === 0) {
         return next(
           new AppError(

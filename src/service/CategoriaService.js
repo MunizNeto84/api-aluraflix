@@ -5,8 +5,8 @@ class CategoriaService extends Service {
     super("CategoriaModel");
     this.videoServices = new Service("VideoModel");
   }
-  async getAllVideosById(categoriaId) {
-    return this.videoServices.getAll({ categoriaId });
+  async getAllVideosById(categoriaId, page, limit) {
+    return this.videoServices.getAll({ categoriaId }, page, limit);
   }
 }
 

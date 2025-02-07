@@ -6,10 +6,21 @@ class Service {
     this.model = modelName;
   }
 
-  async getAll(where = {}) {
-    return dataSource[this.model].findAll({
+  async getAll(where = {}, page = 1, limit = 7) {
+    const offset = (page - 1) * limit;
+
+    const { count, rows } = await dataSource[this.model].findAndCountAll({
       where,
+      limit,
+      offset,
     });
+
+    return {
+      totalRegistros: count,
+      totalPaginas: Math.ceil(count / limit),
+      paginaAtual: page,
+      conteudo: rows,
+    };
   }
 
   async getById(id) {
