@@ -66,4 +66,9 @@ describe("Testes do model Categoria: ", () => {
       .send(testeCategoriaEditada);
     expect(res.status).toBe(200);
   });
+
+  it("Delete - Deve deletar a categoria de teste.", async () => {
+    const res = await request(app).delete(`/categoria/${idCategoria}`);
+    expect(res.status).toBe(200);
+  });
 });
