@@ -26,12 +26,7 @@ app.delete("/categoria/:id", (req, res, next) =>
   categoriaController.delete(req, res, next)
 );
 
-const testeCategoria = {
-  titulo: "categoria-de-teste",
-  cor: "#000000",
-};
-
-let testeCriacao;
+let idCategoria;
 
 describe("Testes do model Categoria: ", () => {
   it("GET - Deve retornar todas as categorias", async () => {
@@ -52,7 +47,23 @@ describe("Testes do model Categoria: ", () => {
   });
 
   it("POST - Deve criar uma categoria de teste.", async () => {
-    testeCriacao = await request(app).post("/categoria").send(testeCategoria);
-    expect(testeCriacao.status).toBe(201);
+    const testeCategoria = {
+      titulo: "categoria-de-teste",
+      cor: "#000000",
+    };
+    const res = await request(app).post("/categoria").send(testeCategoria);
+    idCategoria = res.body.conteudo.id;
+    expect(res.status).toBe(201);
+  });
+
+  it("PACTH - Deve editar a categoria de teste.", async () => {
+    const testeCategoriaEditada = {
+      titulo: "categoria-de-teste-editada",
+      cor: "#ffffff",
+    };
+    const res = await request(app)
+      .patch(`/categoria/${idCategoria}`)
+      .send(testeCategoriaEditada);
+    expect(res.status).toBe(200);
   });
 });
