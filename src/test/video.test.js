@@ -54,4 +54,9 @@ describe("Testes do model Video: ", () => {
       .send(testeVideoEditado);
     expect(res.status).toBe(200);
   });
+
+  it("Delete - Deve deletar o video de teste.", async () => {
+    const res = await request(app).delete(`/video/${idVideo}`);
+    expect(res.status).toBe(200);
+  });
 });
