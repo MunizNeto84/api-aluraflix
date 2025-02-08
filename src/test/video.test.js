@@ -11,6 +11,9 @@ app.get("/video", (req, res, next) =>
   videoController.searchVideo(req, res, next)
 );
 app.get("/video", (req, res, next) => videoController.getAll(req, res, next));
+app.get("/video/free", (req, res, next) =>
+  videoController.getFree(req, res, next)
+);
 app.get("/video/:id", (req, res, next) =>
   videoController.getById(req, res, next)
 );
@@ -34,38 +37,54 @@ describe("Testes do model Video: ", () => {
     };
     const res = await request(app).post("/video").send(testeVideo);
     idVideo = res.body.conteudo.id;
+
     expect(res.status).toBe(201);
   });
   it("GET - Deve retornar todos os videos.", async () => {
     const res = await request(app).get("/video");
+
     expect(res.status).toBe(200);
   });
 
   it("GET - Deve retornar o video de teste no resultado da busca.", async () => {
     const res = await request(app).get("/video?search=teste");
+
     expect(res.status).toBe(200);
     expect(res.body.videos.conteudo[0].titulo).toBe("Video de teste");
   });
 
   it("GET - Deve retornar o video de teste.", async () => {
     const res = await request(app).get(`/video/${idVideo}`);
+
     expect(res.status).toBe(200);
     expect(res.body.titulo).toBe("Video de teste");
   });
 
   it("PACTH - Deve editar o video de teste.", async () => {
     const testeVideoEditado = {
-      titulo: "Video de teste editado",
+      titulo: "Video de teste editado.",
       descricao: "Estou editando o video para meus testes.",
     };
     const res = await request(app)
       .patch(`/video/${idVideo}`)
       .send(testeVideoEditado);
+
     expect(res.status).toBe(200);
+  });
+
+  it("GET - Deve retornar o video de teste na lista de videos gratuitos.", async () => {
+    const res = await request(app).get("/video/free");
+    const video = res.body.conteudo.find(
+      (video) => video.titulo === "Video de teste editado."
+    );
+
+    expect(res.status).toBe(200);
+    expect(video.titulo).toBe("Video de teste editado.");
   });
 
   it("Delete - Deve deletar o video de teste.", async () => {
     const res = await request(app).delete(`/video/${idVideo}`);
+
     expect(res.status).toBe(200);
   });
 });
