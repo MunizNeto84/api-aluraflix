@@ -5,10 +5,10 @@ const videoController = new VideoController();
 const routers = Router();
 
 routers.get("/api/v1/video", (req, res, next) =>
-  videoController.getAll(req, res, next)
+  videoController.searchVideo(req, res, next)
 );
 routers.get("/api/v1/video", (req, res, next) =>
-  videoController.searchVideo(req, res, next)
+  videoController.getAll(req, res, next)
 );
 routers.get("/api/v1/video/free", (req, res, next) =>
   videoController.getFree(req, res, next)

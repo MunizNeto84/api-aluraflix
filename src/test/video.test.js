@@ -7,8 +7,10 @@ const videoController = new VideoController();
 const app = express();
 app.use(express.json());
 
+app.get("/video", (req, res, next) =>
+  videoController.searchVideo(req, res, next)
+);
 app.get("/video", (req, res, next) => videoController.getAll(req, res, next));
-
 app.get("/video/:id", (req, res, next) =>
   videoController.getById(req, res, next)
 );
@@ -37,6 +39,12 @@ describe("Testes do model Video: ", () => {
   it("GET - Deve retornar todos os videos.", async () => {
     const res = await request(app).get("/video");
     expect(res.status).toBe(200);
+  });
+
+  it("GET - Deve retornar o video de teste no resultado da busca.", async () => {
+    const res = await request(app).get("/video?search=teste");
+    expect(res.status).toBe(200);
+    expect(res.body.videos.conteudo[0].titulo).toBe("Video de teste");
   });
 
   it("GET - Deve retornar o video de teste.", async () => {
