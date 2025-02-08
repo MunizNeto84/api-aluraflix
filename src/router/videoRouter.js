@@ -16,7 +16,6 @@ routers.get("/api/v1/video/free", (req, res, next) =>
 routers.get("/api/v1/video/:id", (req, res, next) =>
   videoController.getById(req, res, next)
 );
-
 routers.post("/api/v1/video", (req, res, next) =>
   videoController.create(req, res, next)
 );
