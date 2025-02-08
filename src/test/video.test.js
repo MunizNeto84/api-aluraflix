@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/video", (req, res, next) => videoController.getAll(req, res, next));
+
 app.get("/video/:id", (req, res, next) =>
   videoController.getById(req, res, next)
 );

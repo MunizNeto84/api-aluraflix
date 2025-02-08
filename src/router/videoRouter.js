@@ -10,6 +10,9 @@ routers.get("/api/v1/video", (req, res, next) =>
 routers.get("/api/v1/video", (req, res, next) =>
   videoController.searchVideo(req, res, next)
 );
+routers.get("/api/v1/video/free", (req, res, next) =>
+  videoController.getFree(req, res, next)
+);
 routers.get("/api/v1/video/:id", (req, res, next) =>
   videoController.getById(req, res, next)
 );

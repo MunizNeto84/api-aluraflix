@@ -42,6 +42,21 @@ class VideoController extends Controller {
       next(error);
     }
   }
+
+  async getFree(req, res, next) {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 7;
+
+    try {
+      const freeVideos = await videoService.getFree(page, limit);
+      if (!freeVideos) {
+        new AppError(`Não encontramos nenhum titulo com o gratuito.`, 404);
+      }
+      res.json(freeVideos);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 export default VideoController;

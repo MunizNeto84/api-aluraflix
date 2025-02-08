@@ -8,6 +8,10 @@ class VideoService extends Service {
   async searchVideo(where, page, limit) {
     return super.getAll(where, page, limit);
   }
+
+  async getFree(page, limit) {
+    return super.getAll({ categoriaId: 1 }, page, limit);
+  }
 }
 
 export default VideoService;
