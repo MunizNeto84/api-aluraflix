@@ -6,6 +6,9 @@ module.exports = {
     await queryInterface.addColumn("videos", "categoriaId", {
       allowNull: false,
       type: Sequelize.INTEGER,
+      references: { model: "categorias", key: "id" },
+      onUpdate: "CASCADE",
+      onDelete: "CASCADE",
     });
   },
 

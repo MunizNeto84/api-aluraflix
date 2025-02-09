@@ -11,11 +11,11 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       titulo: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(70),
         allowNull: false,
       },
       descricao: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(500),
         allowNull: false,
       },
       url: {
