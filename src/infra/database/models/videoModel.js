@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/dbConnect.cjs";
 import CategoriaModel from "./categoriaModel.js";
+import CanalModel from "./CanalModel.js";
 const VideoModel = sequelize.define(
   "Video",
   {
@@ -32,6 +33,15 @@ const VideoModel = sequelize.define(
       onUpdate: "CASCADE",
       onDelete: "CASCADE",
     },
+    canalId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: CanalModel,
+        key: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "CASCADE",
+    },
   },
   {
     modelName: "Video",
@@ -42,6 +52,7 @@ const VideoModel = sequelize.define(
 
 VideoModel.associations = (models) => {
   VideoModel.belongsTo(models.CategoriaModel, { foreignKey: "categoriaId" });
+  VideoModel.belongsTo(models.CanalModel, { foreignKey: "canalId" });
 };
 
 export default VideoModel;
