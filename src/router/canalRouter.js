@@ -17,4 +17,8 @@ routers.post("/api/v1/canal", authMiddleware, (req, res, next) =>
   canalController.create(req, res, next)
 );
 
+routers.patch("/api/v1/canal/:id", authMiddleware, (req, res, next) =>
+  canalController.edit(req, res, next)
+);
+
 export default routers;

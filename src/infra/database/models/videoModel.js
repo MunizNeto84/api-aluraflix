@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/dbConnect.cjs";
 import CategoriaModel from "./categoriaModel.js";
-import CanalModel from "./CanalModel.js";
+import CanalModel from "./canalModel.js";
 const VideoModel = sequelize.define(
   "Video",
   {
