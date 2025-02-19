@@ -11,7 +11,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       titulo: {
-        type: Sequelize.STRING(70),
+        type: Sequelize.STRING(100),
         allowNull: false,
       },
       descricao: {
