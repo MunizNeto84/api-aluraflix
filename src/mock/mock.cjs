@@ -139,4 +139,82 @@ const mockFreeVideos = [
   },
 ];
 
-module.exports = { mockCategorias, mockCanais, mockFreeVideos };
+const mockVideos = [
+  {
+    categoriaId: 2,
+    canalId: 1,
+    titulo:
+      "O Primeiro Vídeo Que Gostaria De Ter Assistido Sobre Como Controlar a Ansiedade",
+    descricao:
+      "Ansiedade matou a experiência de grande parte da minha vida, mas agora não mais. Estou há meses e anos me analisando, estudando, praticando e agora estou 100% seguro em repassar tudo o que eu aprendi sobre como controlar a ansiedade, um dos meus maiores inimigos.",
+    url: "https://youtu.be/dZJbORri0ro",
+  },
+  {
+    categoriaId: 2,
+    canalId: 1,
+    titulo:
+      "Maior Tapa que Steve Jobs Já Deu Num Programador (Análise Detalhada)",
+    descricao:
+      "Steve Jobs versus um programador da Apple resultou numa das respostas mais marcantes da história da tecnologia e que possui conhecimentos profundos sobre a relação entre produto, marketing e engenharia de software que todo programador (ou que trabalha em alguma área da programação) deveria saber.",
+    url: "https://youtu.be/Z1GNW_woXI0",
+  },
+  {
+    categoriaId: 2,
+    canalId: 1,
+    titulo: "3 Técnicas Que Eu Uso Para Aprender a Programar Qualquer Coisa",
+    descricao:
+      "Aprender a programar pode ser frustrante, principalmente se você estiver diante de um tópico avançado, o que é ótimo, porque este vídeo é sobre quais técnicas eu uso e sobre como aprender a programar sozinho, depois de meses de observação.",
+    url: "https://youtu.be/ZtMzB5CoekE",
+  },
+  {
+    categoriaId: 2,
+    canalId: 1,
+    titulo:
+      "Um júnior já deveria saber como reduzir a quantidade de IFs de um código",
+    descricao:
+      "Este vai ser mais um vídeo que conversamos sobre arquitetura de software e vai ser massa!!! If, else, if else e switch são condicionais clássicas encontradas em várias linguagens de programação e que definem a estrutura lógica do seu programa.",
+    url: "https://youtu.be/Lf3ZV0UsnEo",
+  },
+  {
+    categoriaId: 2,
+    canalId: 1,
+    titulo: "5 Cuidados Que NINGUÉM Ensina na Programação.",
+    descricao:
+      "Programar é uma habilidade MUITO valiosa, porém aprender a programar pode ser algo extremamente frustrante, mas para ajudar nisso eu reuni nesse video 5 cuidados que eu teria se eu decidisse entrar na área da programação hoje.",
+    url: "https://youtu.be/q8mgiv84tQE",
+  },
+  {
+    categoriaId: 3,
+    canalId: 2,
+    titulo: "SE É POBRE VIRE PEDREIRO NÃO PROGRAMADOR!",
+    descricao:
+      "Sou Horacio Fiasco engenheiro atualmente morando na inglaterra, falo sobre programaçao de uma maneira mais divertida e abordo Java de uma forma que voce nunca viu.",
+    url: "https://youtu.be/l2pCeX_I19o",
+  },
+  {
+    categoriaId: 3,
+    canalId: 2,
+    titulo: "QUEM FAZ FACULDADE DE ADS É ANALFABETO FUNCIONAL?",
+    descricao:
+      "Se você está entrando no mundo da tecnologia ou quer melhorar suas habilidades em computação, este vídeo é para você! Dê o play e prepare-se para transformar seu aprendizado.",
+    url: "https://youtu.be/Pw0xOof7eGs",
+  },
+  {
+    categoriaId: 3,
+    canalId: 2,
+    titulo: "Não da mais pra ser programador",
+    descricao:
+      "A Programação como Arte e Processo de Aprendizado! Neste vídeo, exploramos como a programação vai além de habilidades técnicas, sendo uma verdadeira arte que exige prática e aprendizado contínuo.",
+    url: "https://youtu.be/Uimx5SXR-rQ",
+  },
+  {
+    categoriaId: 3,
+    canalId: 2,
+    titulo: "O golpe mais genial do mundo usando inteligência artificial",
+    descricao:
+      "O golpe mais genial do mundo usando inteligência artificial, video do canal do fiasco.",
+    url: "https://youtu.be/RIEjaVw2neg",
+  },
+];
+
+module.exports = { mockCategorias, mockCanais, mockFreeVideos, mockVideos };
