@@ -143,8 +143,7 @@ const mockVideos = [
   {
     categoriaId: 2,
     canalId: 1,
-    titulo:
-      "O Primeiro Vídeo Que Gostaria De Ter Assistido Sobre Como Controlar a Ansiedade",
+    titulo: "Como Controlar a Ansiedade.",
     descricao:
       "Ansiedade matou a experiência de grande parte da minha vida, mas agora não mais. Estou há meses e anos me analisando, estudando, praticando e agora estou 100% seguro em repassar tudo o que eu aprendi sobre como controlar a ansiedade, um dos meus maiores inimigos.",
     url: "https://youtu.be/dZJbORri0ro",
@@ -152,8 +151,7 @@ const mockVideos = [
   {
     categoriaId: 2,
     canalId: 1,
-    titulo:
-      "Maior Tapa que Steve Jobs Já Deu Num Programador (Análise Detalhada)",
+    titulo: "Maior Tapa que Steve Jobs Já Deu Num Programador.",
     descricao:
       "Steve Jobs versus um programador da Apple resultou numa das respostas mais marcantes da história da tecnologia e que possui conhecimentos profundos sobre a relação entre produto, marketing e engenharia de software que todo programador (ou que trabalha em alguma área da programação) deveria saber.",
     url: "https://youtu.be/Z1GNW_woXI0",
@@ -161,7 +159,7 @@ const mockVideos = [
   {
     categoriaId: 2,
     canalId: 1,
-    titulo: "3 Técnicas Que Eu Uso Para Aprender a Programar Qualquer Coisa",
+    titulo: "3 Técnicas Que Eu Uso Para Aprender a Programar Qualquer Coisa.",
     descricao:
       "Aprender a programar pode ser frustrante, principalmente se você estiver diante de um tópico avançado, o que é ótimo, porque este vídeo é sobre quais técnicas eu uso e sobre como aprender a programar sozinho, depois de meses de observação.",
     url: "https://youtu.be/ZtMzB5CoekE",

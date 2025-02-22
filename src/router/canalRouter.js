@@ -13,6 +13,10 @@ routers.get("/api/v1/canal/:id", authMiddleware, (req, res, next) =>
   canalController.getById(req, res, next)
 );
 
+routers.get("/api/v1/canal/:id/video", authMiddleware, (req, res, next) =>
+  canalController.getAllVideosByID(req, res, next)
+);
+
 routers.post("/api/v1/canal", authMiddleware, (req, res, next) =>
   canalController.create(req, res, next)
 );
