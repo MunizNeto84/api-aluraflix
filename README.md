@@ -5,6 +5,8 @@
 Este repositório hospeda o backend da plataforma **Aluraflix**, projetada para organizar listas de vídeos. Os usuários podem criar e gerenciar suas listas de vídeos favoritas, categorizando os vídeos conforme desejado.
 A API segue o padrão REST, conta com autenticação segura e inclui testes automatizados para garantir a estabilidade e confiabilidade do sistema.
 
+> **OpenAPI:** > _[api-aluraflix](https://documenter.getpostman.com/view/42829844/2sAYdkGoJP#0fba1f63-c141-4278-a134-226b8a478e26)_
+
 ## 💻 api-aluraflix-v1
 
 **🚀 Iniciando projeto:**
@@ -27,6 +29,9 @@ npm install
 **pg**: Cliente PostgreSQL para Node.js, permitindo conexões e consultas ao banco.
 **Sequelize**: ORM para trabalhar com bancos de dados SQL, oferecendo abstrações como models, migrations e queries programáticas.
 **sequelize-cli**: Ferramenta de linha de comando do Sequelize para gerar models, migrations e seeders.
+**cors**: Controla quais domínios podem acessar recursos de um servidor diferente
+**jsonwebtoken**: Gera e valida tokens JWT para autenticação segura.
+**bcryptjs**: Criptografa senhas usando o algoritmo bcrypt.
 
 **🧪 Dependências de Testes:**
 
@@ -98,3 +103,9 @@ npm run test
 ```
 
 ## 🚀 Deploy
+
+> [api-aluraflix-wojl.onrender.com/api/v1](https://api-aluraflix-wojl.onrender.com/api/v1)
+
+Optei por usar o **Render.com** neste projeto para facilitar o deploy e gerenciamento da aplicação. O **Render** é uma plataforma de hospedagem moderna para APIs e possui integração contínua com o Git. Escolhi essa ferramenta porque permite um fluxo de deploy rápido além de oferecer um plano gratuito para pequenos projetos.
+
+Para contornar o timeout da versão gratuita, utilizei o **UptimeRobot**, um serviço que faz requisições periódicas para manter a aplicação ativa, evitando que ela entre em modo de hibernação. Essa estratégia me permite manter a API disponível sem precisar de um plano pago.
