@@ -1,7 +1,10 @@
 const mockCategorias = [
-  { titulo: "livre", cor: "#e5e5e5" },
-  { titulo: "tecnologia", cor: "#00ff00" },
-  { titulo: "humor", cor: "#00fa33" },
+  { titulo: "livre", cor: "#2DE1FC" },
+  { titulo: "tecnologia", cor: "#2AFC98" },
+  { titulo: "humor", cor: "#09E85E" },
+  { titulo: "linux", cor: "#16C172" },
+  { titulo: "games", cor: "#214F4B" },
+  { titulo: "estudo", cor: "#873D48" },
 ];
 
 const mockCanais = [
@@ -54,11 +57,35 @@ const mockCanais = [
     views: 5,
   },
   {
-    nickName: "Alanzoka",
-    urlLogo: "https://i.postimg.cc/7Lk0MmZS/alan-logo.png",
-    urlCapa: "https://i.postimg.cc/0Q5ShjmQ/capa-lista.jpg",
-    urlPerfil: "https://i.postimg.cc/j58fTTQh/capa-simples.jpg",
-    urlCarrossel: "https://i.postimg.cc/vmt9Pf4k/alazoka-capa-00.jpg",
+    nickName: "CodigoFonteTV",
+    urlLogo: "https://i.postimg.cc/VkLvQVw6/codigo-fonte.png",
+    urlCapa: "https://i.postimg.cc/BnY6qBZC/capa-lista.jpg",
+    urlPerfil: "https://i.postimg.cc/ZqX5NYdB/capa-perfil.jpg",
+    urlCarrossel: "https://i.postimg.cc/d0h0DZLc/codigo-capa-00.jpg",
+    views: 1,
+  },
+  {
+    nickName: "FabioAkita",
+    urlLogo: "https://i.postimg.cc/s1CWW1SN/fabio-logo.png",
+    urlCapa: "https://i.postimg.cc/xTmydVHZ/capa-lista.jpg",
+    urlPerfil: "https://i.postimg.cc/gcnKdgYg/capa-perfil.jpg",
+    urlCarrossel: "https://i.postimg.cc/9QjPRgYQ/fabio-capa-00.jpg",
+    views: 1,
+  },
+  {
+    nickName: "ManoDeyvin",
+    urlLogo: "https://i.postimg.cc/xTLMT7B3/deyvin-logo.png",
+    urlCapa: "https://i.postimg.cc/nhZ7s2Jb/capa-lista.jpg",
+    urlPerfil: "https://i.postimg.cc/Hk2MbMYJ/capa-perfil1.jpg",
+    urlCarrossel: "https://i.postimg.cc/qBP2r0D7/deyvin-capa-00.jpg",
+    views: 1,
+  },
+  {
+    nickName: "BaltaIO",
+    urlLogo: "https://i.postimg.cc/YqNLwFmX/balta-logo.png",
+    urlCapa: "https://i.postimg.cc/TP1KmHNS/capa-lista.jpg",
+    urlPerfil: "https://i.postimg.cc/TPspcqZP/capa-perfil.jpg",
+    urlCarrossel: "https://i.postimg.cc/FHDfYQp3/balta-capa-00.jpg",
     views: 1,
   },
 ];
@@ -67,10 +94,10 @@ const mockFreeVideos = [
   {
     categoriaId: 1,
     canalId: 1,
-    titulo: "Como se Tornar o CTO da Sua Empresa (verdades crueis)",
+    titulo: "Maior Tapa que Steve Jobs Já Deu Num Programador",
     descricao:
-      "Neste vídeo eu mostro um documento interno do Pagar.me, criado em 2015, que ajudou a decidir meu futuro na empresa. Revejo essa apresentação como parte de um novo quadro no canal, Request/Response. Falo também sobre ser CTO e a importância de abraçar todos os aspectos de gestão, desde vendas até suporte, gerenciando o estresse e garantindo o sucesso de todos da equipe.",
-    url: "https://youtu.be/M3na7_wwvPQ",
+      "Steve Jobs versus um programador da Apple resultou numa das respostas mais marcantes da história da tecnologia e que possui conhecimentos profundos sobre a relação entre produto, marketing e engenharia de software que todo programador (ou que trabalha em alguma área da programação) deveria saber.",
+    url: "https://youtu.be/Z1GNW_woXI0",
   },
   {
     categoriaId: 1,
@@ -107,11 +134,11 @@ const mockFreeVideos = [
   },
   {
     categoriaId: 1,
-    canalId: 1,
-    titulo: "Este Vídeo Pode Salvar o Seu Emprego",
+    canalId: 9,
+    titulo: "Como se tornar CTO e ser odiado por metade da empresa",
     descricao:
       "Neste vídeo eu mostro como evitar ser demitido em 2025, em meio à pressão por produtividade aliada à crescente automação e desafios econômicos, como uma alta na taxa Selic.",
-    url: "https://youtu.be/JtxE-VGm9jU",
+    url: "https://youtu.be/OGggKHoXk_8",
   },
   {
     categoriaId: 1,
@@ -131,11 +158,27 @@ const mockFreeVideos = [
   },
   {
     categoriaId: 1,
-    canalId: 1,
-    titulo: "Está Pronto para Ser Respondido em Vídeo?",
+    canalId: 8,
+    titulo: "Por que calculadoras não são computadores?",
     descricao:
-      "Neste vídeo eu falo sobre um novo quadro chamado Request/Response, onde você me envia uma Request em vídeo e eu retorno com um Response também em vídeo 😍 Eu sinceramente acredito que essa nossa interação por vídeo vai contribuir e energizar toda a nossa comunidade!",
-    url: "https://youtu.be/hMOtVWMr4_k",
+      "Quem foi John Von Neumann? Como ele e Alan Turing inventaram o computador moderno? E como uma máquina de escrever levou Alan Turing ao computador?",
+    url: "https://youtu.be/G4MvFT8TGII",
+  },
+  {
+    categoriaId: 1,
+    canalId: 8,
+    titulo: "Manifesto Anti-Parasita: Seja um Criador",
+    descricao:
+      "Disclaimer: este episódio é bem atípico, não espere que eu faça esse formato sempre, é só hoje, uma indulgência a mim mesmo :-D",
+    url: "https://youtu.be/nX0wPjNzn3o",
+  },
+  {
+    categoriaId: 1,
+    canalId: 4,
+    titulo: "EU PAREI DE PROCRASTINAR E FUI PROMOVIDA",
+    descricao:
+      "Você já sentiu que está sempre adiando os estudos de programação? Ou que começa, mas nunca consegue manter a consistência? Eu também passei por isso. Mas quando finalmente entendi como estudar da maneira certa e parei de procrastinar, minha evolução foi absurda – e isso levou à minha promoção!",
+    url: "https://youtu.be/_nWNhLvtgMo",
   },
 ];
 
@@ -150,11 +193,11 @@ const mockVideos = [
   },
   {
     categoriaId: 2,
-    canalId: 1,
-    titulo: "Maior Tapa que Steve Jobs Já Deu Num Programador.",
+    canalId: 4,
+    titulo: "É POR ISSO QUE VOCÊ CONTINUA SENDO JÚNIOR",
     descricao:
-      "Steve Jobs versus um programador da Apple resultou numa das respostas mais marcantes da história da tecnologia e que possui conhecimentos profundos sobre a relação entre produto, marketing e engenharia de software que todo programador (ou que trabalha em alguma área da programação) deveria saber.",
-    url: "https://youtu.be/Z1GNW_woXI0",
+      "Todos nós nos importamos com a nossa carreira profissional. E se sentir estagnado no crescimeto é super comum.",
+    url: "https://youtu.be/TiJX0_35P2A",
   },
   {
     categoriaId: 2,
@@ -212,6 +255,229 @@ const mockVideos = [
     descricao:
       "O golpe mais genial do mundo usando inteligência artificial, video do canal do fiasco.",
     url: "https://youtu.be/RIEjaVw2neg",
+  },
+  {
+    categoriaId: 3,
+    canalId: 9,
+    titulo: "SCRUM MASTER + Dev Júnior = Uma noite inteira de problemas!",
+    descricao:
+      "Esse conteúdinho faz parte da live oficial do canal, onde trago notícias,, tretas sobre mercado e carreira de tecnologia de uma forma zoada.",
+    url: "https://youtu.be/apZg62nPyMI",
+  },
+  {
+    categoriaId: 3,
+    canalId: 9,
+    titulo: "DENÚNCIA: Os salários MAIS miseráveis em tech",
+    descricao:
+      "Esse conteúdinho faz parte da live oficial do canal, onde trago notícias, tretas sobre mercado e carreira de tecnologia de uma forma zoada.",
+    url: "https://youtu.be/yhQWzN9gPLY",
+  },
+  {
+    categoriaId: 3,
+    canalId: 9,
+    titulo:
+      "A programadora que estudou 300 dias seguidos e agora está esgotada!",
+    descricao:
+      "Esse conteúdinho faz parte da live oficial do canal, onde trago notícias, tretas sobre mercado e carreira de tecnologia de uma forma zoada.",
+    url: "https://youtu.be/RyOJS84cqBI",
+  },
+  {
+    categoriaId: 3,
+    canalId: 2,
+    titulo: "Passei dos 30 e não sei mais fazer amigos",
+    descricao:
+      "Eu nao tenho muito pra falar a respeito do video meu intuito é so ter um lugar onde eu possa despejar minhas ideias sem pressão.",
+    url: "https://youtu.be/iMl_5d_inyE",
+  },
+  {
+    categoriaId: 5,
+    canalId: 6,
+    titulo: "GAMER CLT",
+    descricao:
+      "Hoje venho mostrar meus primeiros dias voltando a trabalhar. A semana foi absurdamente puxada, mas tô feliz kkkk",
+    url: "https://youtu.be/BbTx8fs3fs0",
+  },
+  {
+    categoriaId: 5,
+    canalId: 6,
+    titulo: "PLATINAR JOGOS VAI ACABAR COM A SUA EXPERIÊNCIA",
+    descricao:
+      "Platinar todos os jogos tem um preço… e não é só dinheiro! 💀💰 Neste vídeo, faço uma reflexão sobre o lado obscuro dos platinadores completistas: as coisas que fazemos que não são tão legais assim para conquistar aquele 100%",
+    url: "https://youtu.be/jPQVlFgVCms",
+  },
+  {
+    categoriaId: 5,
+    canalId: 6,
+    titulo: "SEKIRO É OU NÃO É UM SOULSLIKE?",
+    descricao:
+      "Neste vídeo, eu explico por que Sekiro é considerado um Souls-Like, com base nas minhas pesquisas e no meu ponto de vista.",
+    url: "https://youtu.be/Q7NLgGQdqmk",
+  },
+  {
+    categoriaId: 5,
+    canalId: 6,
+    titulo: "O CARA QUEBROU O HOLLOW KNIGHT EM 4 MINUTOS KKK",
+    descricao:
+      "Nesse vídeo você verá Hollow Knight sendo zerado em menos de 5 minutos, mas aqui você entenderá (quase) tudo. Vou te explicar os bugs, a rota, os requisitos e como o jogador Staxis conseguiu esse feito.",
+    url: "https://youtu.be/2x7YdnhUQ94",
+  },
+  {
+    categoriaId: 5,
+    canalId: 6,
+    titulo: "MANDARAM O PIOR VÍDEO DE DEATH STRANDING PRO CROZAO",
+    descricao:
+      "Death Stranding ainda é chato pra burro em 2025. (Fuji não sabe o que fala...)",
+    url: "https://youtu.be/CnFDU6jhqZQ",
+  },
+  {
+    categoriaId: 5,
+    canalId: 6,
+    titulo: "O MELHOR VÍDEO QUE JÁ VI SOBRE RED DEAD REDEMPTION 2",
+    descricao: "Canal do cross",
+    url: "https://youtu.be/th78d0v19Sg",
+  },
+  {
+    categoriaId: 5,
+    canalId: 6,
+    titulo: "ESSES JOGOS AQUI VOCÊ NÃO VAI PLATINAR",
+    descricao: "Canal do cross",
+    url: "https://youtu.be/wi-auvwe_n8",
+  },
+  {
+    categoriaId: 6,
+    canalId: 4,
+    titulo: "Curso de Angular | Saindo DO ZERO em 1 HORA",
+    descricao:
+      "Com o lançamento do Angular 18, surgiram mudanças importantes na sintaxe básica do framework. Dominar essa sintaxe e os conceitos de uma linguagem de programação e framework é essencial para avançar no aprendizado.",
+    url: "https://youtu.be/VumdXFJ4n7o",
+  },
+  {
+    categoriaId: 6,
+    canalId: 4,
+    titulo: "ASSISTA ESSE VÍDEO se QUER APRENDER ANGULAR em 2025",
+    descricao:
+      "O estudo organizado e planejado de um tema ajuda a alcançar mais rapidamente um alto nível de proficiência. Por isso, no vídeo de hoje eu trago no vídeo de hoje um guia essencial para quem quer aprender Angular em 2025.",
+    url: "https://youtu.be/2U_IIp7KAKg",
+  },
+  {
+    categoriaId: 6,
+    canalId: 4,
+    titulo: "ASSISTA ESSE VÍDEO se QUER APRENDER JAVA em 2025",
+    descricao:
+      "Java está na top 3 linguagens de programação mais usadas no mundo desde 1995. Neste vídeo, apresento o Guia Completo para quem quer aprender Java em 2025, com o roadmap essencial para quem deseja aprender Java do zero ou aperfeiçoar suas habilidades",
+    url: "https://youtu.be/C8aKTAhpA7w",
+  },
+  {
+    categoriaId: 6,
+    canalId: 4,
+    titulo: "Como usar o SQL Server no Java Spring c/ Parallels Desktop",
+    descricao:
+      "O SQL Server é um sistema de gerenciamento de banco de dados desenvolvido pela Microsoft, amplamente utilizado para armazenar e gerenciar dados em aplicações de pequeno a grande porte.",
+    url: "https://youtu.be/IhyXeCmAmC4",
+  },
+  {
+    categoriaId: 4,
+    canalId: 5,
+    titulo: "Esse Linux copiou o Windows 11 na cara dura e fez melhor?",
+    descricao:
+      "O Deepin 25 foi anunciado em sua edição preview, que pode ser encarada como um beta também. A distro Linux chinesa reforça o visual Windows Like, inspirado no Windows 11.",
+    url: "https://youtu.be/FE5cTAzXlKI",
+  },
+  {
+    categoriaId: 4,
+    canalId: 5,
+    titulo: "Eu instalei o Ubuntu do jeito errado esse tempo todo!",
+    descricao:
+      "Aprenda a usar o recurso de instalação automática do Ubuntu para facilitar o processo de setup da distro Linux em qualquer equipamento. Depois de consultar  a documentação da Canonical sobre como usar o arquivo de autoinstall.yml.",
+    url: "https://youtu.be/pB3Td7paWUc",
+  },
+  {
+    categoriaId: 4,
+    canalId: 5,
+    titulo: "O KDE vai fazer o quê?",
+    descricao:
+      "O projeto KDE anunciou a sua meta audaciosa de criar o KDE Linux, o sistema operacional, com base no Arch Linux, que será a distro oficial do projeto. ",
+    url: "https://youtu.be/PuGUHUjJ-ww",
+  },
+  {
+    categoriaId: 4,
+    canalId: 5,
+    titulo: "2025 é o ano do Linux no Desktop?",
+    descricao:
+      "2025 reserva muitas coisas interessantes para o mundo Linux, várias delas devem impulsionar o crescimento do sistema em desktops, então, será que finalmente veremos o meme do ano do Linux se concretizar?",
+    url: "https://youtu.be/vTLLr7Fs1Ho",
+  },
+  {
+    categoriaId: 4,
+    canalId: 5,
+    titulo: "5 Distros Linux que MERECEM a sua Atenção em 2025",
+    descricao:
+      "2025 terá vários lançamentos importantes para o mundo Linux e hoje vamos te contar sobre 5 distribuições Linux que merecem a sua atenção no próximo ano, com lançamentos importantes, novas versões oficiais, novas interfaces e um prelúdio do futuro.",
+    url: "https://youtu.be/RIEjaVw2neg",
+  },
+  {
+    categoriaId: 2,
+    canalId: 8,
+    titulo: "Conhecimentos Básicos para Iniciantes em Programação",
+    descricao:
+      "Neste terceiro episódio da série Começando aos 40 vou finalmente começar a tocar em assuntos mais práticos, pra começar o que eu considero que é o absolutamente básico que você precisa começar a dominar o quanto antes.",
+    url: "https://youtu.be/sx4hAHhO9CY",
+  },
+  {
+    categoriaId: 2,
+    canalId: 8,
+    titulo: "Guia DEFINITIVO de Aprendendo a Aprender",
+    descricao:
+      "Quem é o tipo de profissional que vai sobreviver à Crise Econômica Pós-COVID-19 na nossa área de desenvolvimento de software? Como se faz pra ser tornar esse profissional?",
+    url: "https://youtu.be/oUPaJxk6TZ0",
+  },
+  {
+    categoriaId: 6,
+    canalId: 8,
+    titulo: "O Guia DEFINITIVO de UBUNTU para Devs Iniciantes",
+    descricao:
+      "Vou pegar um Ubuntu recém-instalado, e do zero ir até um ambiente completo para desenvolvedores de software (em particular Web, claro), com Docker, Tmux, Vim, ASDF e durante o percurso explicar várias coisas sobre Linux em geral, várias dicas, e até mesmo como customizar os temas pra ficar dahura!",
+    url: "https://youtu.be/epiyExCyb2s",
+  },
+  {
+    categoriaId: 6,
+    canalId: 10,
+    titulo: "GUIDs no .NET 9: Novidades que Você Precisa Conhecer",
+    descricao:
+      "Novidade no .NET 9! Os GUIDs estão de cara nova e com recursos que você precisa conhecer! Se você quer entender como essas mudanças vão impactar seu desenvolvimento, não perca o vídeo de hoje no nosso canal.",
+    url: "https://youtu.be/0aN4Y0ac7X0",
+  },
+  {
+    categoriaId: 2,
+    canalId: 10,
+    titulo: "Arquitetura de Software - Arquitetura Importa ou é Exagero?",
+    descricao:
+      "Neste vídeo, vamos discutir se a arquitetura realmente faz toda a diferença no desenvolvimento de software ou se, em alguns casos, o foco deveria estar em outras áreas.",
+    url: "https://youtu.be/7s0RdG6cVOU",
+  },
+  {
+    categoriaId: 2,
+    canalId: 7,
+    titulo: "Como Resolver o Bug dos Boletos de 2025",
+    descricao:
+      "Apesar de existir uma plataforma de boletos de pagamento no Brasil desde 2018, muitas empresas ainda fazem essa geração dentro de casa. Os dias estão literalmente contados, pois a partir de 22 de fevereiro de 2025 o fator de vencimento deve ser calculado com outro critério.",
+    url: "https://youtu.be/IqJJuwsC0ec",
+  },
+  {
+    categoriaId: 6,
+    canalId: 7,
+    titulo: "Minicurso de SQL (Saia do Zero em 1 Hora)",
+    descricao:
+      "SQL é a linguagem essencial para manipular banco de dados é essencial para qualquer desenvolvedor! Aprender SQL corretamente é um excelente diferencial profissional.",
+    url: "https://youtu.be/dpanYy8IrcU",
+  },
+  {
+    categoriaId: 2,
+    canalId: 3,
+    titulo: "A verdade sobre o desenvolvimento de Software!",
+    descricao:
+      "Hoje, recebemos Giulia Bordignon , desenvolvedora de software na Aquasoft, para uma conversa incrível sobre sua trajetória e os desafios enfrentados ao longo de mais de 7 anos de experiência no desenvolvimento de soluções em .NET e C#.",
+    url: "https://youtu.be/3A2r2g_S01U",
   },
 ];
 
